@@ -28,7 +28,7 @@ export default (props) => {
     setColor(color === colorsList[0] ? colorsList[1] : colorsList[0]);
   };
   return (
-    <Wrapper>
+    <Wrapper aria-label="container">
       <CompA color={color} data-testid="CompA-A" />
       <ToggleButton data-testid="update-color" onClick={updateColor}>
         Toggle color

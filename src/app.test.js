@@ -6,7 +6,11 @@ import App from "./app";
 
 describe("App", () => {
   afterEach(cleanup);
-  it("shows correct color with colorcode", () => {
+  it("check element by aria label", () => {
+    const { getByLabelText } = render(<App />);
+    expect(getByLabelText("container")).toBeInTheDocument();
+  });
+  it("shows correct color with color code", () => {
     const { getByTestId } = render(<App />);
     expect(getByTestId("CompA-A")).toHaveStyle("background: #ff0000");
   });
